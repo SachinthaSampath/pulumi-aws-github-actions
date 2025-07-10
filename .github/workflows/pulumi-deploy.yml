@@ -27,17 +27,17 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
+      - name: Select Pulumi Stack
+        run: |
+          pulumi stack ls
+          pulumi stack select snas/dev
+
       - name: Set AWS Credentials
         run: |
           mkdir -p ~/.aws
           echo "[default]" > ~/.aws/credentials
           echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
-          echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
-        
-      - name: Select Pulumi Stack
-        run: |
-          pulumi stack ls
-          pulumi stack select dev
+          echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials        
 
       - name: Select AWS Region
         run: pulumi config set aws:region ap-south-1
