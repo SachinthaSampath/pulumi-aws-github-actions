@@ -1,3 +1,12 @@
+ # Pulumi reference
+ [https://www.pulumi.com/docs/iac/get-started/aws/create-component/](https://www.pulumi.com/docs/iac/get-started/aws/create-component/)
+
+- Created a Pulumi new project.
+- Provisioned a new S3 bucket.
+- Turned it into a static website.
+- Created a website component for easy reuse.
+- Destroyed all of the resources you’ve provisioned.
+
  # AWS TypeScript Pulumi Template
 
  A minimal Pulumi template for provisioning AWS infrastructure using TypeScript. This template creates an Amazon S3 bucket and exports its name.
