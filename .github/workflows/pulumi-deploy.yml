@@ -36,8 +36,8 @@ jobs:
         
       - name: Select Pulumi Stack
         run: |
-        pulumi stack ls
-        pulumi stack select dev
+          pulumi stack ls
+          pulumi stack select dev
 
       - name: Select AWS Region
         run: pulumi config set aws:region ap-south-1
