@@ -35,7 +35,9 @@ jobs:
           echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
         
       - name: Select Pulumi Stack
-        run: pulumi stack select dev
+        run: |
+        pulumi stack ls
+        pulumi stack select dev
 
       - name: Select AWS Region
         run: pulumi config set aws:region ap-south-1
